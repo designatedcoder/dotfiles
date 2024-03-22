@@ -4,7 +4,7 @@ My personal \*neovim configuration files.
 **1. Neovim Configuration**
 
 This repository contains my personal Neovim configuration as a mainly Laravel developer with some Vue included as I use that mostly for frontend.
-### Please keep in mind that this is my own personal setup for my own personal workflow in my own personal dev environment.  These files are meant to only be some insight into my workflow and to give you ideas for your own. I have no interest in changing my setup to suit your needs.
+### Please keep in mind that this is my own personal setup for my own personal workflow in my own personal dev environment.  These files are meant to only be some insight into my workflow and to give you ideas for your own. I have no interest in changing my setup to suit your needs.  I will, of course keep this updated to suit my own needs.
 
 ### Usage
 
