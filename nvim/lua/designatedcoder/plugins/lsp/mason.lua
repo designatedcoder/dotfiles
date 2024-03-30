@@ -3,6 +3,14 @@ return {
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
     },
+    opts = {
+        ensure_installed = {
+            "stylua",
+            "prettierd",
+            "pint",
+            "phpstan",
+        },
+    },
     config = function()
         -- import mason
         local mason = require("mason")
