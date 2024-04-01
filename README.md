@@ -11,8 +11,6 @@ This repository contains my personal Neovim configuration as a mainly Laravel de
 1. Config requirements:
 
     Because this is specifically for Laravel development with Vue3, you should make sure that the environment you will use has php, composer and npm installed.
-
-
 2. Clone this repository to your local machine:
 
     ```bash
@@ -38,6 +36,8 @@ This repository contains my personal Neovim configuration as a mainly Laravel de
 7. Launch Neovim:
 
     Open Neovim. It will automatically install any missing plugins and apply the configuration.
+
+    Formatting plugins need to be installed manually from Mason (ie, stylua, prettierd, pint, and phpstan).
     
 8. Tmux:
 
