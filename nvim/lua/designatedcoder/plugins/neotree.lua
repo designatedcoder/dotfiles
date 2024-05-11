@@ -1,5 +1,20 @@
 return {
     {
+        "nvim-tree/nvim-web-devicons",
+        config = function ()
+            require'nvim-web-devicons'.setup {
+                strict = true;
+                override_by_extension = {
+                    ["blade.php"] = {
+                        icon="",
+                        color="#ff2d20",
+                        name = "blade"
+                    }
+                }
+            }
+        end
+    },
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
