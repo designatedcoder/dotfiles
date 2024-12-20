@@ -77,10 +77,10 @@ return {
         })
 
         -- configure typescript server with plugin
-        lspconfig["tsserver"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
+        -- lspconfig["tsserver"].setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        -- })
 
         -- configure css server
         lspconfig["cssls"].setup({
@@ -98,6 +98,7 @@ return {
         lspconfig["emmet_language_server"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            filetypes = { "php", "vue", "css", "html", "javascript", "less", "sass", "scss" },
         })
 
         lspconfig["phpactor"].setup({
