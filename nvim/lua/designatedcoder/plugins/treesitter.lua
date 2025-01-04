@@ -23,6 +23,8 @@ return {
                     "scss",
                     "vue",
                     "phpdoc",
+		    "markdown",
+		    "markdown_inline"
                 },
 
                 incremental_selection = {
