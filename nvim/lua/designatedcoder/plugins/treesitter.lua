@@ -22,7 +22,8 @@ return {
                 "markdown",
                 "markdown_inline",
                 "php_only",
-                "blade"
+                "blade",
+                "typescript"
             },
             incremental_selection = {
                 enable = true,

@@ -9,6 +9,10 @@ return {
         -- import lspconfig plugin
         local lspconfig = require("lspconfig")
 
+        -- import mason registry for typescript support 
+        local mason_registry = require("mason-registry")
+        local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path() .. "/node_modules/@vue/language-server"
+
         -- import cmp-nvim-lsp plugin
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -63,8 +67,8 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -92,7 +96,7 @@ return {
         lspconfig["emmet_language_server"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "php", "vue", "css", "html", "javascript", "less", "sass", "scss" },
+            filetypes = { "php", "vue", "css", "html", "javascript", "ts_ls", "less", "sass", "scss" },
         })
 
         lspconfig["phpactor"].setup({
@@ -108,6 +112,27 @@ return {
         lspconfig["volar"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+        })
+
+        lspconfig["ts_ls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            init_options = {
+                plugins = {
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = vue_language_server_path,
+                        languages = { "vue" },
+                    },
+                },
+            },
+            filetypes = {
+                "javascript",
+                "typescript",
+                "javascriptreact",
+                "typescriptreact",
+                "vue",
+            },
         })
 
         -- configure lua server (with special settings)
