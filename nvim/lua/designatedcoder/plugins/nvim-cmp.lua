@@ -22,7 +22,7 @@ return {
         require'luasnip'.filetype_extend("php", {"html"})
         require'luasnip'.filetype_extend("php", {"phpdoc"})
         require'luasnip'.filetype_extend("php", {"blade"})
-	require'luasnip'.filetype_extend("blade", {"html"})
+	    require'luasnip'.filetype_extend("blade", {"html"})
         require'luasnip'.filetype_extend("vue", {"html"})
 
         cmp.setup({
