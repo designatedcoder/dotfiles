@@ -37,7 +37,7 @@ This repository contains my personal Neovim configuration as a mainly Laravel de
 
     Open Neovim. It will automatically install any missing plugins and apply the configuration.
 
-    Formatting plugins need to be installed manually from Mason (ie, stylua, prettierd, pint, and phpstan).
+    I have added "WhoIsSethDaniel/mason-tool-installer.nvim" to lsp configs to auto-install plugins not found in Mason (ie, stylua, prettierd, pint, and phpstan, etc).
     
 8. Tmux:
 
