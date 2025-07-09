@@ -122,7 +122,6 @@ return {
                 },
 
                 virtual_text = false, -- Show text after diagnostics
-                -- signs = true,
                 update_in_insert = false,
                 underline = true,
                 severity_sort = false,
@@ -138,55 +137,35 @@ return {
             })
 
             -- Configure LSP servers
-
-            -- configure html server
-            vim.lsp.config("html", {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure css server
-            vim.lsp.config("cssls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure tailwindcss server
-            vim.lsp.config("tailwindcss", {
+            vim.lsp.config("*", {
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
 
             -- configure emmet language server
             vim.lsp.config("emmet_language_server", {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                filetypes = { "php", "vue", "css", "html", "javascript", "ts_ls", "less", "sass", "scss" },
-            })
-
-            -- configure phpactor language server
-            vim.lsp.config("phpactor", {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure intelephense language server
-            vim.lsp.config("intelephense", {
-                capabilities = capabilities,
-                on_attach = on_attach,
+                filetypes = {
+                    "php",
+                    "vue",
+                    "react",
+                    "css",
+                    "html",
+                    "javascript",
+                    "less",
+                    "sass",
+                    "scss",
+                    "javascriptreact",
+                    "typescriptreact"
+                },
             })
 
             -- configure vue_ls language server
             vim.lsp.config("vue_ls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
             })
 
             -- configure ts_ls language server
             vim.lsp.config("ts_ls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 init_options = {
                     plugins = {
                         {
@@ -207,8 +186,6 @@ return {
 
             -- configure lua server (with special settings)
             vim.lsp.config("lua_ls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 settings = { -- custom settings for lua
                     Lua = {
                         -- make the language server recognize "vim" global
