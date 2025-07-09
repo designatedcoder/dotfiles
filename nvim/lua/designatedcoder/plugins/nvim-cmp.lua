@@ -24,6 +24,7 @@ return {
         require'luasnip'.filetype_extend("php", {"blade"})
 	    require'luasnip'.filetype_extend("blade", {"html"})
         require'luasnip'.filetype_extend("vue", {"html"})
+        require'luasnip'.filetype_extend("react", {"html"})
 
         cmp.setup({
             completion = {
